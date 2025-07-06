@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 220 20% 10%; /* Deep Space Purple: A very dark, cool-toned blue-gray */
+    --foreground: 220 15% 92%; /* Deep Space Purple: A light gray, ensuring good contrast */
+
+    --card: 210 25% 22% / 0.2; /* Glassmorphism: more transparent */
+    --card-foreground: 210 20% 90%; /* Light gray for text on cards */
+
+    --popover: 210 25% 15%; /* Darker for popovers - consider adjusting based on new background */
+    --popover-foreground: 210 20% 90%;
+
+    --primary: 210 29% 34%; /* Midnight Blue - adjusted for better visibility */
+    --primary-foreground: 210 20% 95%; /* Light color for text on primary */
+
+    --secondary: 210 25% 28%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 210 25% 25%;
+    --muted-foreground: 210 20% 65%; /* Slightly more contrast */
+
+    --accent: 270 70% 65%; /* Deep Space Purple: A more saturated and slightly lighter, vibrant purple */
+    --accent-foreground: 270 10% 95%; /* Deep Space Purple: High contrast for text on accent */
+
+    --destructive: 0 70% 55%; /* Brighter red for destructive actions */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 92% / 0.2; /* Glassmorphism: light border with low opacity */
+    --input: 210 25% 30%; /* Slightly different from border for inputs */
+    --ring: 270 70% 65%; /* Accent for rings - aligned with new accent */
+
+    --radius: 0.5rem;
+
+    /* Chart colors (can be adjusted if charts are used) */
+    --chart-1: 210 60% 50%;
+    --chart-2: 260 50% 55%;
+    --chart-3: 180 50% 45%;
+    --chart-4: 30 70% 60%;
+    --chart-5: 330 65% 55%;
+    
+    /* Sidebar specific colors - aligned with the dark theme */
+    --sidebar-background: 210 28% 12%; /* Darker sidebar */
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 260 55% 60%; /* Accent for sidebar primary elements */
+    --sidebar-primary-foreground: 210 20% 95%;
+    --sidebar-accent: 210 25% 20%; /* Subtle accent for sidebar items */
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 210 25% 25%;
+    --sidebar-ring: 260 55% 65%;
+  }
+
+  .dark {
+    /* Dark theme is default, but if needed for explicit .dark class: */
+    --background: 220 20% 10%;
+    --foreground: 220 15% 92%;
+    --card: 210 25% 22% / 0.2; /* Glassmorphism: more transparent */
+    --card-foreground: 210 20% 90%;
+    --popover: 210 25% 15%;
+    --popover-foreground: 210 20% 90%;
+    --primary: 210 29% 34%;
+    --primary-foreground: 210 20% 95%;
+    --secondary: 210 25% 28%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 210 25% 25%;
+    --muted-foreground: 210 20% 65%;
+    --accent: 270 70% 65%;
+    --accent-foreground: 270 10% 95%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 92% / 0.2; /* Glassmorphism: light border with low opacity */
+    --input: 210 25% 30%;
+    --ring: 270 70% 65%;
+
+    --sidebar-background: 210 28% 12%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 260 55% 60%;
+    --sidebar-primary-foreground: 210 20% 95%;
+    --sidebar-accent: 210 25% 20%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 210 25% 25%;
+    --sidebar-ring: 260 55% 65%;
+  }
+
+  .photography-theme {
+    --background: 0 0% 98%; /* Off-white for a softer feel */
+    --foreground: 240 10% 3.9%; /* Near-black for sharp text */
+
+    --card: 0 0% 100% / 0.2; /* Glassmorphism: transparent white */
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%; /* Using the dark foreground as primary for contrast */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 270 70% 65%; /* Use the same vibrant accent as the dark theme */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 3.9% / 0.2; /* Glassmorphism: dark border with low opacity */
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  section {
+    @apply py-16 md:py-24;
+  }
+}
+
+.section-title {
+  @apply text-3xl font-bold tracking-tight text-center sm:text-4xl lg:text-5xl mb-12 md:mb-16;
+  background: linear-gradient(to right, hsl(var(--accent)), hsl(var(--primary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.photography-theme .section-title {
+  background: linear-gradient(to right, hsl(var(--accent)), hsl(var(--primary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem; /* 24px */
+}
+
+@media (min-width: 640px) { /* sm */
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) { /* lg */
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+.masonry-grid > * {
+  break-inside: avoid;
+  margin-bottom: 1.5rem; /* 24px */
+}
+
+    
