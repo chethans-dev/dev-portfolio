@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  devIndicators: false
   // Vercel specific configurations (optional, remove if not deploying to Vercel)
   // experimental: {
   //   speedInsights: true, 
