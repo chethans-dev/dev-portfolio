@@ -28,7 +28,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           src={project.imageUrl}
           alt={project.title}
           fill
-          objectFit="cover"
+          style={{ objectFit: 'cover' }}
           className="transition-transform duration-500"
           data-ai-hint={project.imageAiHint}
         />

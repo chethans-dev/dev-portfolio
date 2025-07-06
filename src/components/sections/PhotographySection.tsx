@@ -29,7 +29,7 @@ export function PhotographySection() {
         <AnimatedScrollWrapper>
           <h2 className="section-title pb-4">Through My Lens</h2>
         </AnimatedScrollWrapper>
-        <AnimatedScrollWrapper delay={200}>
+        {/* <AnimatedScrollWrapper delay={200}> */}
           <div className="masonry-grid">
             {photographyData.map((photo) => (
               <Card
@@ -58,7 +58,7 @@ export function PhotographySection() {
               </Card>
             ))}
           </div>
-        </AnimatedScrollWrapper>
+        {/* </AnimatedScrollWrapper> */}
       </div>
       {/* <Lightbox
         src={selectedImage}
